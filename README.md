@@ -14,11 +14,8 @@ trustedHosts はカスタムプリセットに設定すれば良いかと思い�
 trustedHosts:
 ```
 
-extension.diagnostics は symbol-bootstrap ならデフォルトで有効だと思います。
-
-```
-target/nodes/dhealth-peer-node/server-config/resources/config-extensions-server.properties
-```
+extension.diagnostics は symbol-bootstrap ならデフォルトで有効だと思います。  
+(target/nodes/dhealth-peer-node/server-config/resources/config-extensions-server.properties)
 
 # 準備
 
