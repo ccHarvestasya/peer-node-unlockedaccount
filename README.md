@@ -1,6 +1,24 @@
-# peer-node-peer
+# peer-node-unlockedaccount
 
-ピアノードのピア情報を取得する
+ピアノードから /node/unlockedaccount 相当のデータを取得する
+
+# 注意
+
+- 実行するマシンの IP/Host をノードの trustedHosts に設定する必要があります（許可されたマシンにしか応答しません）。
+- extension.diagnostics が有効になっている必要があります。
+
+trustedHosts はカスタムプリセットに設定すれば良いかと思います。  
+空にすることで、全ての IP にていして有効となります。（セキュリティ的に良くない？）
+
+```
+trustedHosts:
+```
+
+extension.diagnostics は symbol-bootstrap ならデフォルトで有効だと思います。
+
+```
+target/nodes/dhealth-peer-node/server-config/resources/config-extensions-server.properties
+```
 
 # 準備
 
@@ -13,14 +31,14 @@ pip install symbol-sdk-python
 ## peer-node-peer と certtool をクローン
 
 ```
-git clone https://github.com/ccHarvestasya/peer-node-peer.git
+git clone https://github.com/ccHarvestasya/peer-node-unlockedaccount.git
 git clone https://github.com/ccHarvestasya/symbol-node-configurator.git
 ```
 
 ## CA プライベートキー生成
 
 ```
-cd peer-node-peer
+cd peer-node-unlockedaccount
 openssl genpkey -algorithm ed25519 -outform PEM -out ca.key.pem
 ```
 
